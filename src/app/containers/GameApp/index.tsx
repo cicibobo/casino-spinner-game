@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as style from './style.css';
 import { inject, observer } from 'mobx-react';
-
+import {Spinner} from '../../components';
 import {
   STORE_GAME,
   STORE_ROUTER,
@@ -11,7 +11,7 @@ import {
 
 @inject(STORE_GAME, STORE_ROUTER)
 @observer
-export class TodoApp extends React.Component {
+export class GameApp extends React.Component {
   constructor(props, context) {
     super(props, context);
   }
@@ -19,8 +19,7 @@ export class TodoApp extends React.Component {
   render() {
     return (
       <div className={style.normal}>
-        test game
-    
+        <Spinner/>
       </div>
     );
   }
