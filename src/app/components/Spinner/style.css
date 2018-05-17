@@ -16,57 +16,58 @@
     background-position-y: 0px;
     background-repeat: repeat-y;
     animation-play-state: running;
+    margin: 5px;
 }
 
 .rotation {
-    animation: rotation 3s ease-in-out both infinite alternate-reverse;
+    animation: rotation 6s linear both  alternate;
 }
 .diamonds {
-    animation: diamonds 1.6s ease-in-out forwards normal;
+    animation: diamonds 2.5s ease-in-out forwards normal;
 }
 
 .hearts {
-    animation: hearts 1.3s ease-in-out forwards  normal;
+    animation: hearts 3s ease-out forwards  normal;
 }
 
 .spades {
-    animation: spades 1.4s ease-in-out forwards  normal;
+    animation: spades 4s ease-in-out forwards  normal;
 }
 
 .clubs {
-    animation: clubs 1.5s ease-in-out forwards  normal;
+    animation: clubs 2s ease-in-out forwards  normal;
 }
 
 @keyframes hearts{
-    0% {background-position-y: 400px;}
-    33% {background-position-y: -850px;}
-    67% {background-position-y: -803px;}
-    100% {background-position-y: -803px;}
+    0% {background-position-y: -2620px;}
+    33% {background-position-y: -2890px;}
+    67% {background-position-y: -2824px;}
+    100% {background-position-y: -2824px;}
 }
 
 @keyframes spades{
-      0% {background-position-y: -403px;}
-    33% {background-position-y: -950px;}
-    67% {background-position-y: -906px;}
-    100% {background-position-y: -906px;}    
+      0% {background-position-y: -2605px;}
+    33% {background-position-y: -2970px;}
+    67% {background-position-y: -2924px;}
+    100% {background-position-y: -2924px;}    
 }
 
 @keyframes clubs{
-    0% {background-position-y: -400px;}
-    33% {background-position-y: -650px;}
-    67% {background-position-y: -603px;}
-    100% {background-position-y: -603px;}
+    0% {background-position-y: -2605px;}
+    33% {background-position-y: -3080px;}
+    67% {background-position-y: -3024px;}
+    100% {background-position-y: -3024px;}
 }
 
 @keyframes diamonds{
-    0% {background-position-y: -400px;}
-    33% {background-position-y: -750px;}
-    67% {background-position-y: -703px;}
-    100% {background-position-y: -703px;}
+    0% {background-position-y: -2605px;}
+    33% {background-position-y: -3180px;}
+    67% {background-position-y: -3124px;}
+    100% {background-position-y: -3124px;}
 }
 
 
 @keyframes rotation{
-    0% {background-position-y: 0px;}
-    100% {background-position-y: -906px;}
+    /* 0% {background-position-y: 0px;}
+    100% {background-position-y: -2600px;} */
 }

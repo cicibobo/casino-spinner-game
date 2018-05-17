@@ -1,8 +1,15 @@
 import * as React from 'react';
-import classNames from 'classnames/bind';
+import * as classNames from 'classnames';
 import * as style from './style.css';
 
-export class Spinner extends React.Component {
+interface SpinnerState {
+    firstStyle: number;
+    secondStyle: number;
+    thirdStyle: number;
+}
+
+interface SpinnerProps {}
+export class Spinner extends React.Component<SpinnerProps, SpinnerState> {
 
     constructor(props) {
         super(props);
@@ -10,7 +17,7 @@ export class Spinner extends React.Component {
     }
 
     componentDidMount() {
-        setTimeout(function () { this.setState({ firstStyle: 2, secondStyle: 1, thirdStyle: 4 }); }.bind(this), 3000);
+        this.setState({ firstStyle: 2, secondStyle: 1, thirdStyle: 4 }); 
     }
 
     getStyle(type){
