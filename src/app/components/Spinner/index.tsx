@@ -8,20 +8,23 @@ interface SpinnerState {
     thirdStyle: number;
 }
 
-interface SpinnerProps {}
+interface SpinnerProps {
+    slotNumbers: Array<number>;
+}
 export class Spinner extends React.Component<SpinnerProps, SpinnerState> {
 
     constructor(props) {
         super(props);
-        this.state = { firstStyle: 0 , secondStyle: 0, thirdStyle: 0 };
+        this.state = { 
+            firstStyle: this.props.slotNumbers[0], 
+            secondStyle: this.props.slotNumbers[1], 
+            thirdStyle: this.props.slotNumbers[2] 
+        };
     }
 
-    componentDidMount() {
-        this.setState({ firstStyle: 2, secondStyle: 1, thirdStyle: 4 }); 
-    }
 
-    getStyle(type){
-        switch(type){
+    getStyle(type) {
+        switch (type) {
             case 0: return style.rotation;
             case 1: return style.hearts;
             case 2: return style.clubs;
@@ -30,12 +33,22 @@ export class Spinner extends React.Component<SpinnerProps, SpinnerState> {
         }
     }
 
+
+    component(props){
+        debugger;
+        // this.setState({ 
+        //     firstStyle: this.props.slotNumbers[0], 
+        //     secondStyle: this.props.slotNumbers[1], 
+        //     thirdStyle: this.props.slotNumbers[2] 
+        // })
+    }
+
     render() {
         return (
             <div className={style.spinnerContainer}>
-                <div className={classNames(style.item,this.getStyle(this.state.firstStyle))}></div>
-                <div className={classNames(style.item,this.getStyle(this.state.secondStyle))}></div>
-                <div className={classNames(style.item,this.getStyle(this.state.thirdStyle))}></div>
+                <div className={classNames(style.item, this.getStyle(this.props.slotNumbers[0]))}></div>
+                <div className={classNames(style.item, this.getStyle(this.props.slotNumbers[1]))}></div>
+                <div className={classNames(style.item, this.getStyle(this.props.slotNumbers[2]))}></div>
             </div>
         )
     }

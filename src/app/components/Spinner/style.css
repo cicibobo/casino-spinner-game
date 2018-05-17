@@ -15,12 +15,11 @@
     background-size: cover;
     background-position-y: 0px;
     background-repeat: repeat-y;
-    animation-play-state: running;
     margin: 5px;
 }
 
 .rotation {
-    animation: rotation 6s linear both  alternate;
+    animation: rotation 1s linear both  alternate;
 }
 .diamonds {
     animation: diamonds 2.5s ease-in-out forwards normal;
@@ -68,6 +67,6 @@
 
 
 @keyframes rotation{
-    /* 0% {background-position-y: 0px;}
-    100% {background-position-y: -2600px;} */
+    0% {background-position-y: 0px;}
+    100% {background-position-y: 800px;}
 }

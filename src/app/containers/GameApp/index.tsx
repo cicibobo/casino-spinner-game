@@ -6,8 +6,8 @@ import {
   STORE_GAME,
   STORE_ROUTER,
 } from 'app/constants';
-
-
+import { ProbabilityInput } from 'app/components/ProbabilityInput';
+import { Play } from 'app/components/Play';
 
 @inject(STORE_GAME, STORE_ROUTER)
 @observer
@@ -16,10 +16,40 @@ export class GameApp extends React.Component {
     super(props, context);
   }
 
+  getRandomNumber(from, to){
+    return Math.floor(Math.random() * (to - from)) + from;
+  }
+
+
+  getSlotNumbers(){
+   const win = this.props[STORE_GAME].win;
+   
+      if(win){
+        return [1,1,1];
+      }
+   
+      let result = [this.getRandomNumber(1, 4), this.getRandomNumber(1, 4), this.getRandomNumber(1, 4)];
+      if(!win && result[0] === 1 && result[0] === 1 && result[0] === 1  ){
+       return this.getSlotNumbers();
+      }
+
+      return result; 
+  }
+
   render() {
+    const gameStore = this.props[STORE_GAME];
+    const play = ()=>{
+      gameStore.setSlotNumbers([0,0,0]);
+      setTimeout(()=>{
+        gameStore.setWin(this.getRandomNumber(0,100) <= gameStore.probability);
+        gameStore.setSlotNumbers(this.getSlotNumbers());
+      },1000);
+    };
     return (
       <div className={style.normal}>
-        <Spinner/>
+        <ProbabilityInput value={gameStore.probability} setProbability={gameStore.setProbability} />
+        <Spinner slotNumbers={gameStore.slotNumbers} />
+        <Play play={play} />
       </div>
     );
   }
