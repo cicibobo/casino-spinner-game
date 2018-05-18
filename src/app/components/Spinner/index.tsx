@@ -33,16 +33,6 @@ export class Spinner extends React.Component<SpinnerProps, SpinnerState> {
         }
     }
 
-
-    component(props){
-        debugger;
-        // this.setState({ 
-        //     firstStyle: this.props.slotNumbers[0], 
-        //     secondStyle: this.props.slotNumbers[1], 
-        //     thirdStyle: this.props.slotNumbers[2] 
-        // })
-    }
-
     render() {
         return (
             <div className={style.spinnerContainer}>

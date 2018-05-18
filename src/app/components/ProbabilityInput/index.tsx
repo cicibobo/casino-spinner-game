@@ -2,7 +2,8 @@ import * as React from 'react';
 import * as style from './style.css';
 interface ProbabilityInputProps {
     value: number,
-    setProbability: Function
+    setProbability: Function,
+    choosen: boolean
 }
 interface State {
     value: number,
@@ -23,6 +24,9 @@ export class ProbabilityInput extends React.Component<ProbabilityInputProps, Sta
     handleChange(event) {
         this.setState({ value: event.target.value});
     }
+    componentWillReceiveProps(oldProps, newProps){
+        console.log(oldProps,newProps);
+    }
 
     render() {
 
@@ -33,10 +37,10 @@ export class ProbabilityInput extends React.Component<ProbabilityInputProps, Sta
         return (
             <div className={style.chanceContainer}>
                 {
-                    this.state.choosen ? (
-                        <div className={style.label} >Set chance to win </div>
+                    this.props.choosen ? (
+                        <div className={style.label} >Set chance to win is {this.state.value} % </div>
                     ) : (
-                            <div>
+                            <div className={style.chanceSelection} >
                                 <div className={style.label} >Set chance to win </div>
                                 <div className={style.inputContainer}>
                                     <div className={style.inputText} >
