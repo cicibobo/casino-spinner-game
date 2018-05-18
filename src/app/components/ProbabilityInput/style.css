@@ -1,0 +1,50 @@
+.inputContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chanceContainer{
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.label {
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+
+.inputText>input {
+    font-size: 20px;
+}
+
+.buttonContainer {}
+
+.setButton {
+    display: inline-block;
+    zoom: 1;
+    white-space: nowrap;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    line-height: normal;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 20px;
+    color: white;
+    border-radius: 4px;
+    background: rgb(66, 184, 221);
+}
+
+.setButton:hover {
+    color: #000000;
+    background-color: #FFFFFF;
+}

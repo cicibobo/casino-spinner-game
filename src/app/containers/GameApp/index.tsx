@@ -23,16 +23,13 @@ export class GameApp extends React.Component {
 
   getSlotNumbers(){
    const win = this.props[STORE_GAME].win;
-   
       if(win){
         return [1,1,1];
       }
-   
       let result = [this.getRandomNumber(1, 4), this.getRandomNumber(1, 4), this.getRandomNumber(1, 4)];
       if(!win && result[0] === 1 && result[0] === 1 && result[0] === 1  ){
        return this.getSlotNumbers();
       }
-
       return result; 
   }
 
@@ -46,7 +43,7 @@ export class GameApp extends React.Component {
       },1000);
     };
     return (
-      <div className={style.normal}>
+      <div className={style.mainContainer}>
         <ProbabilityInput value={gameStore.probability} setProbability={gameStore.setProbability} />
         <Spinner slotNumbers={gameStore.slotNumbers} />
         <Play play={play} />

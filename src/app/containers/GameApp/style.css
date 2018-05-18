@@ -19,4 +19,11 @@ body {
   -ms-font-smoothing: antialiased;
   font-smoothing: antialiased;
   font-weight: 300;
+  background: #FFFC19;
+}
+
+.mainContainer{
+  background: #FFFC19;
+  display: flex;
+  flex-direction: column;
 }
